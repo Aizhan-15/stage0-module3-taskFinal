@@ -4,13 +4,21 @@ import java.util.Scanner;
 
 public class DigitsSumCalculator {
     public void calculateSum(int number) {
-        long n, sum;
+        long n, s;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number ");
         n = sc.nextLong();
-        for (sum = 0; n != 0; n /= 10) {
-            sum += n % 10;
+        s = sum(n);
+        System.out.println("Sum of digits of a number is " + s);
+
+    }
+
+    static int sum(long num) {
+        int sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
         }
-        System.out.println("Sum of digits of a number is " + sum);
+        return sum;
     }
 }
