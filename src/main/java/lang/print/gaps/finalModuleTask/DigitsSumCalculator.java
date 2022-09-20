@@ -1,24 +1,18 @@
 package lang.print.gaps.finalModuleTask;
 
-import java.util.Scanner;
-
 public class DigitsSumCalculator {
     public void calculateSum(int number) {
-        long n, s;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number ");
-        n = sc.nextLong();
-        s = sum(n);
-        System.out.println("Sum of digits of a number is " + s);
-
+        int sum = 0;
+        while (number != 0) {
+            sum = sum + number % 10;
+            number = number / 10;
+        }
     }
 
-    static int sum(long num) {
-        int sum = 0;
-        while (num != 0) {
-            sum += num % 10;
-            num /= 10;
-        }
-        return sum;
+    // Driver program
+    public static void main(String[] args) {
+        int number = 687;
+        System.out.println(number);
     }
 }
+
